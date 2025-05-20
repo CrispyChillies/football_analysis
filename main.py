@@ -1,15 +1,15 @@
 from utils import save_video, read_video
 from trackers import Tracker
 
-import torch
-
 
 def main():
     video_frames = read_video("input_video/08fd33_4.mp4")
 
     tracker = Tracker("models/best.pt")
 
-    tracks = tracker.get_object_tracks(video_frames)
+    tracks = tracker.get_object_tracks(
+        video_frames, read_from_stub=True, stub_path="stubs/track_stub.pkl"
+    )
 
     save_video(video_frames, "output_video/output_vide.avi")
 
