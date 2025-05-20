@@ -1,0 +1,3 @@
+keypoints: Landmark detection
+masks: segmentation
+cls: class_id
